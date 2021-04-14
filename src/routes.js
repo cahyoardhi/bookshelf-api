@@ -6,51 +6,31 @@ const routes = [
     method: 'POST',
     path: '/books',
     handler: addBookHandler,
-    options: {
-      cors: {
-        origin: ['*'],
-      },
-    },
   },
   {
     method: 'GET',
     path: '/books',
     handler: getAllBooksHandler,
-    options: {
-      cors: {
-        origin: ['*'],
-      },
-    },
   },
   {
     method: 'GET',
-    path: '/books/{id}',
+    path: '/books/{bookId}',
     handler: getBookByIdHandler,
-    options: {
-      cors: {
-        origin: ['*'],
-      },
-    },
   },
   {
     method: 'PUT',
-    path: '/books/{id}',
+    path: '/books/{bookId}',
     handler: editBookByIdHandler,
-    options: {
-      cors: {
-        origin: ['*'],
-      },
-    },
   },
   {
     method: 'DELETE',
-    path: '/books/{id}',
+    path: '/books/{bookId}',
     handler: deleteBookByIdHandler,
-    options: {
-      cors: {
-        origin: ['*'],
-      },
-    },
+  },
+  {
+    method: '*',
+    path: '/{any*}',
+    handler: () => 'Error 404 page not found',
   },
 ];
 
